@@ -51,8 +51,4 @@ def get_nodeid2text():
     # project only the required columns
     nodeid2text = nodeid2text[["node idx", "label", "text"]]
 
-    # split the dataset
-    nodeid2text_train = nodeid2text.loc[train_idx]
-    nodeid2text_valid = nodeid2text.loc[valid_idx]
-    nodeid2text_test = nodeid2text.loc[test_idx]
-    return nodeid2text_train, nodeid2text_valid, nodeid2text_test
+    return nodeid2text, (train_idx, valid_idx, test_idx)
